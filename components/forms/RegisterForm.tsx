@@ -85,7 +85,10 @@ const RegisterForm = ({ user }: { user: User }) => {
         privacyConsent: values.privacyConsent,
       };
 
-      const newPatient = await registerPatient(patient);
+      const newPatient = await registerPatient({
+        ...patient,
+        identificationDocument: values.identificationDocument?.[0]
+      });
 
       if (newPatient) {
         router.push(`/patients/${user.$id}/new-appointment`);
@@ -112,9 +115,6 @@ const RegisterForm = ({ user }: { user: User }) => {
           <div className="mb-9 space-y-1">
             <h2 className="sub-header">Personal Information</h2>
           </div>
-
-
-{/* - SKAPA NYTT  */}
 
           {/* NAME */}
 
@@ -147,8 +147,6 @@ const RegisterForm = ({ user }: { user: User }) => {
               placeholder="(555) 123-4567"
             />
           </div>
-
-          
 
           {/* BirthDate & Gender */}
           <div className="flex flex-col gap-6 xl:flex-row">
