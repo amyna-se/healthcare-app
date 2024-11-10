@@ -87,7 +87,7 @@ const RegisterForm = ({ user }: { user: User }) => {
 
       const newPatient = await registerPatient({
         ...patient,
-        identificationDocument: values.identificationDocument?.[0]
+        identificationDocument: formData
       });
 
       if (newPatient) {
