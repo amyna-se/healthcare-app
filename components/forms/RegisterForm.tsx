@@ -113,6 +113,9 @@ const RegisterForm = ({ user }: { user: User }) => {
             <h2 className="sub-header">Personal Information</h2>
           </div>
 
+
+{/* - SKAPA NYTT  */}
+
           {/* NAME */}
 
           <CustomFormField
@@ -144,6 +147,8 @@ const RegisterForm = ({ user }: { user: User }) => {
               placeholder="(555) 123-4567"
             />
           </div>
+
+          
 
           {/* BirthDate & Gender */}
           <div className="flex flex-col gap-6 xl:flex-row">
